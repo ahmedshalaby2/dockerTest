@@ -2,10 +2,9 @@ FROM registry.access.redhat.com/ubi8/ubi:8.0
 
 MAINTAINER AhmedShalaby
 
-
 ENV DOCROOT=/var/www/html
 
-RUN   yum install -y --no-docs --disableplugin=subscription-manager httpd && \ 
+RUN   yum install -y  --disableplugin=subscription-manager httpd && \ 
       yum clean all --disableplugin=subscription-manager -y && \
       echo "Hello from the httpd-parent container!" > ${DOCROOT}/index.html
 
